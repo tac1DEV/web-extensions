@@ -2,7 +2,7 @@
     
     "//first_comment":  "métadonnées fondamentales nécessaires au module.",
     "manifest_version": 2,
-    "name": "Beastify",
+    "name": "LolHistory",
     "version": "1.0",
     
     "//second_comment": "s'affiche dans le gestionnaire de modules",
@@ -22,13 +22,7 @@
     "//sixth_comment": "icon = image affiché dans la barre d'outils, title = info-bulle affichée au survol du bouton, popup = page HTML affichée au clic sur le bouton",
     "browser_action":{
         "default_icon": "icons/beasts-32.png",
-        "default_title": "Beastify this page",
-        "default_popup": "popup/choose.html"
-    },
-
-    "//seventh_comment": "rendre les images accessibles à partir de la page popup",
-    "web_accessible_ressources": [
-        "beasts/*.jpg"
-    ]
-
+        "default_title": "My league profile",
+        "default_popup": "popup/popup.html"
+    }
 }
