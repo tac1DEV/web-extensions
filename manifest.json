@@ -1,0 +1,23 @@
+{
+    
+    "//first_comment":  "métadonnées fondamentales nécessaires au module.",
+    "manifest_version": 2,
+    "name": "Web Extensions",
+    "version": "1.0",
+    
+    "//second_comment": "s'affiche dans le gestionnaire de modules",
+    "description": "Ajoute une bordure rouge pleine sur l'ensemble des pages web mozilla.org",
+    
+    "//third_comment": "icon de l'extension affichée dans le gestionnaire de modules",
+    "icons":{
+        "48": "icons/border-48.png"
+    },
+
+    "//fourth_comment": "demande a firefox de charger le script extension.js sur les pages firefox (regex)",
+    "content_scripts": [
+        {
+            "matches": ["*://*.mozilla.org/*"],
+            "js": ["extension.js"]
+        }
+    ]
+}
