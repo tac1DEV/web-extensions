@@ -24,5 +24,9 @@
         "default_icon": "icons/beasts-32.png",
         "default_title": "My league profile",
         "default_popup": "popup/popup.html"
-    }
+    },
+    "//seventh_comment": "script d'arrière-plan qui gère les messages entrants de la page popup",
+    "background": {
+    "scripts": ["background.js"]
+}
 }
