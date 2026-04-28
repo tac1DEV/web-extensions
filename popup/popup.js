@@ -4,7 +4,7 @@ const connect = document.getElementById("connect");
 
 connect.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const inputValue = document.getElementById("summonerName").value;
+  const inputValue = document.getElementById("summonerName").value ?? "e2r tacosougrec-777";
   const summonerName = inputValue.split("-")[0];
   const tagline = inputValue.split("-")[1];
   console.log("Summoner Name:", summonerName);
@@ -21,7 +21,7 @@ function reportExecuteScriptError(error){
     .classList.add('hidden');
     document.querySelector('#error-content')
     .classList.remove('hidden');
-    console.error(`Erreur d'exécution du script de contenu beastify : ${error.message}`,
+    console.error(`Erreur d'exécution du script de contenu background.js : ${error.message}`,
   );
 }
 

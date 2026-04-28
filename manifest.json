@@ -17,7 +17,7 @@
     },
 
     "fifth_comment": "gestion des permissions de l'extension",
-    "permissions": ["activeTab"],
+    "permissions": ["https://europe.api.riotgames.com/*"],
 
     "//sixth_comment": "icon = image affiché dans la barre d'outils, title = info-bulle affichée au survol du bouton, popup = page HTML affichée au clic sur le bouton",
     "browser_action":{
