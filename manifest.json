@@ -1,32 +1,25 @@
 {
     
-    "//first_comment":  "métadonnées fondamentales nécessaires au module.",
     "manifest_version": 2,
     "name": "LolHistory",
     "version": "1.0",
     
-    "//second_comment": "s'affiche dans le gestionnaire de modules",
     "description": "Ajoute un bouton à la barre d'outils qui transforme les images en bêtes féroces.",
     
-    "//third_comment": "lien vers la page d'accueil du projet",
     "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
 
-    "//fourth_comment": "icon de l'extension affichée dans le gestionnaire de modules",
     "icons":{
         "48": "icons/beasts-48.png"
     },
 
-    "fifth_comment": "gestion des permissions de l'extension",
-    "permissions": ["https://europe.api.riotgames.com/*"],
+    "permissions": ["https://europe.api.riotgames.com/*", "tabs", "<all_urls>", "webRequest", "storage"],
 
-    "//sixth_comment": "icon = image affiché dans la barre d'outils, title = info-bulle affichée au survol du bouton, popup = page HTML affichée au clic sur le bouton",
     "browser_action":{
         "default_icon": "icons/beasts-32.png",
         "default_title": "My league profile",
         "default_popup": "popup/popup.html"
     },
-    "//seventh_comment": "script d'arrière-plan qui gère les messages entrants de la page popup",
     "background": {
     "scripts": ["background.js"]
-}
+    }
 }
