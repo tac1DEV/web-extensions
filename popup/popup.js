@@ -7,10 +7,8 @@ connect.addEventListener("submit", async (e) => {
   const inputValue = document.getElementById("summonerName").value ?? "e2r tacosougrec-777";
   const summonerName = inputValue.split("-")[0];
   const tagline = inputValue.split("-")[1];
-  console.log("Summoner Name:", summonerName);
-  console.log("Tagline:", tagline);
-  //
   const data =  await browser.runtime.sendMessage({ type: "GET_PLAYER", summonerName, tagline });
+  console.log("data", data);
   document.getElementById("historique").textContent = JSON.stringify(data, null, 2);
 });
 }
