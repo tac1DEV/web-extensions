@@ -1,35 +1,35 @@
 {
-    
-    "manifest_version": 2,
-    "name": "LolHistory",
-    "version": "1.0",
-    
-    "description": "Ajoute un bouton à la barre d'outils qui affiche des 10 dernières parties de votre compte League of Legends",
-    
-    "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
 
-    "icons":{
-        "48": "icons/beasts-48.png"
-    },
+  "manifest_version": 2,
+  "name": "LolHistory",
+  "version": "1.0",
 
-    "permissions": ["https://europe.api.riotgames.com/*", "tabs", "<all_urls>", "webRequest", "storage"],
+  "description": "Ajoute un bouton à la barre d'outils qui affiche des 10 dernières parties de votre compte League of Legends",
 
-    "browser_action":{
-        "default_icon": "icons/beasts-32.png",
-        "default_title": "My league profile",
-        "default_popup": "popup/popup.html"
-    },
-    "background": {
-    "scripts": ["background.js"]
-    },
-    "browser_specific_settings": {
-        "gecko": {
-                "id": "@LolHistory",
-                "data_collection_permissions": {
-                "required": [
-                    "none"
-                ]
-                }
-        }
+  "homepage_url": "https://github.com/tac1DEV/web-extensions",
+
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+
+  "permissions": [ "https://europe.api.riotgames.com/*", "tabs", "<all_urls>", "webRequest", "storage" ],
+
+  "browser_action": {
+    "default_icon": "icons/icon-32.png",
+    "default_title": "My league profile",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@LolHistory",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
     }
+  }
 }
