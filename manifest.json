@@ -4,7 +4,7 @@
     "name": "LolHistory",
     "version": "1.0",
     
-    "description": "Ajoute un bouton à la barre d'outils qui transforme les images en bêtes féroces.",
+    "description": "Ajoute un bouton à la barre d'outils qui affiche des 10 dernières parties de votre compte League of Legends",
     
     "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
 
@@ -21,5 +21,15 @@
     },
     "background": {
     "scripts": ["background.js"]
+    },
+    "browser_specific_settings": {
+        "gecko": {
+                "id": "@LolHistory",
+                "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+                }
+        }
     }
 }
