@@ -24,7 +24,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "@LolHistory",
+      "id": "@LolHistory2",
       "data_collection_permissions": {
         "required": [
           "none"

@@ -1,4 +1,5 @@
 const API_URL = "https://europe.api.riotgames.com";
+const CHAMPIONS_URL = "https://ddragon.leagueoflegends.com/cdn/16.9.1/data/en_US/champion.json";
 
 async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -12,13 +13,21 @@ browser.runtime.onMessage.addListener(async (msg) => {
     const matchIDs = await fetch(API_URL + "/lol/match/v5/matches/by-puuid/" + data.puuid + "/ids?api_key=" + API_KEY);
     const matchIDsData = await matchIDs.json();
     const matchDataArray = [];
+
       for (const matchID of matchIDsData.slice(0, 10)) { 
       const match = await fetch(API_URL + "/lol/match/v5/matches/" + matchID + "?api_key=" + API_KEY);
       const matchData = await match.json();
-      const participants = await matchData.info.participants;
+      const participants = matchData.info.participants;
+      
       const index = participants.findIndex(participant => participant.riotIdGameName?.replace(/\s/g, '').toLowerCase() === msg.summonerName.replace(/\s/g, '').toLowerCase() && participant.riotIdTagline?.replace(/\s/g, '').toLowerCase() === msg.tagline.replace(/\s/g, '').toLowerCase());
+      const getChampionsName = await fetch(CHAMPIONS_URL);
+      const getChampionsNameData = await getChampionsName.json();
+      //getAllChampions
+      const getChampionsNameDataArray = Object.values(getChampionsNameData.data).map((x) => x.id);
+      const foundChampion = getChampionsNameDataArray.find((champion) => champion.toLowerCase() === participants[index].championName.toLowerCase());
+      console.log(foundChampion);
       const dataGame = {
-        champIcon: "https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/"+participants[index].championName+".png",
+        champIcon: "https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/"+foundChampion+".png",
         score: participants[index].kills+"/"+participants[index].deaths+"/"+participants[index].assists,
         win: participants[index].win // win ou loose
       };
