@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "LolHistory",
-  "version": "1.0",
+  "version": "2.0",
 
   "description": "Ajoute un bouton à la barre d'outils qui affiche des 10 dernières parties de votre compte League of Legends",
 
